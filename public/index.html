@@ -42,17 +42,17 @@
                             allpositions.push(point.getGlobalTransform());
                         }
                         console.log('Position: ', allpositions);
-                        GameLoop();
+                        GameLoop(voiture);
                     },
                     false
                 );
 
-                function GameLoop() { 
+                function GameLoop(voiture) { 
                     window.requestAnimationFrame(function() {
                         voiture.setPosition(allpositions[i]);
                         i++;
                         SDK3DVerse.engineAPI.propagateChanges();
-                        GameLoop();
+                        GameLoop(voiture);
                     });
                 }
             }); 
