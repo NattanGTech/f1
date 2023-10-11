@@ -52,7 +52,7 @@
 
                 function GameLoop(voiture, allpositions, i) { 
                     window.requestAnimationFrame(function() {
-                        voiture[0].setPosition(allpositions[i]);
+                        voiture.setPosition(allpositions[i]);
                         i++;
                         SDK3DVerse.engineAPI.propagateChanges();
                         GameLoop(voiture, allpositions, i);
