@@ -47,10 +47,11 @@
                         console.log('debug children: ', SDK3DVerse.engineAPI.getEntityChildren(trajEntities));
 
                         var allpositions = new Array();
-                        allpoints["PromiseResult"].forEach(point => {
+                        for(const point of allpoints){
                             allpositions.push(point.getGlobalTransform());
-                        });
-                        GameLoop();
+                        }
+                        console.log('Position: ', allpositions);
+                        // GameLoop();
                     },
                     false
                 );
