@@ -7,6 +7,7 @@ const test = async () => {
     console.log('Voiture: ', voiture);
     console.log('debug children: ', SDK3DVerse.engineAPI.getEntityChildren(spline));
 }
+test();
 const trajEntities = spline[0];
 let allpoints = SDK3DVerse.engineAPI.getEntityChildren(spline);
 
