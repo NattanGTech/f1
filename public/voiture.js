@@ -7,7 +7,7 @@ function GameLoop() {
     });
 }
 
-canvas.addEventListener(
+document.getElementById('display_canvas').addEventListener(
     'mouseup',
     async (e) =>
     {
