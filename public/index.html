@@ -32,7 +32,6 @@
                         var voiture = await SDK3DVerse.engineAPI.findEntitiesByEUID("1f9c1d9a-338d-4eaf-8adb-02d21653befb");
                         console.log('Spline: ', spline);
                         console.log('Voiture: ', voiture);
-                        console.log(typeof(voiture));
                         
                         var trajEntities = spline[0];
                         var allpoints = await SDK3DVerse.engineAPI.getEntityChildren(trajEntities);
