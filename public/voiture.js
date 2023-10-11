@@ -1,13 +1,15 @@
-const splineEUID = "3bb55065-4c5a-4507-8ba6-1d80a9df1f0c";
-const voitureEUID = "1f9c1d9a-338d-4eaf-8adb-02d21653befb";
-const spline = await SDK3DVerse.engineAPI.findEntitiesByEUID(splineEUID);
-const voiture = await SDK3DVerse.engineAPI.findEntitiesByEUID(voitureEUID);
+const test = async () => {
+    const splineEUID = "3bb55065-4c5a-4507-8ba6-1d80a9df1f0c";
+    const voitureEUID = "1f9c1d9a-338d-4eaf-8adb-02d21653befb";
+    const spline = await SDK3DVerse.engineAPI.findEntitiesByEUID(splineEUID);
+    const voiture = await SDK3DVerse.engineAPI.findEntitiesByEUID(voitureEUID);
+    console.log('Spline: ', spline);
+    console.log('Voiture: ', voiture);
+    console.log('debug children: ', SDK3DVerse.engineAPI.getEntityChildren(spline));
+}
 const trajEntities = spline[0];
-//let splineName = spline.getName();
 let allpoints = SDK3DVerse.engineAPI.getEntityChildren(spline);
-console.log('Spline: ', spline);
-console.log('Voiture: ', SDK3DVerse.engineAPI.findEntitiesByEUID("1f9c1d9a-338d-4eaf-8adb-02d21653befb"));
-console.log('debug children: ', SDK3DVerse.engineAPI.getEntityChildren(spline));
+
 let allpositions = new Array();
 allpoints.forEach(point => {
     allpositions.push(trajEntities.getGlobalTransform());
