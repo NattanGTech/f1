@@ -41,10 +41,10 @@
                         var voiture = await SDK3DVerse.engineAPI.findEntitiesByEUID("1f9c1d9a-338d-4eaf-8adb-02d21653befb");
                         console.log('Spline: ', spline);
                         console.log('Voiture: ', voiture);
-
+                        
                         var trajEntities = spline[0];
-                        var allpoints = SDK3DVerse.engineAPI.getEntityChildren(trajEntities);
-                        console.log('debug children: ', SDK3DVerse.engineAPI.getEntityChildren(trajEntities));
+                        var allpoints = SDK3DVerse.engineAPI.getEntityChildren(trajEntities)[["PromiseResult"]];
+                        console.log('debug children: ', SDK3DVerse.engineAPI.getEntityChildren(trajEntities)[["PromiseResult"]]);
 
                         var allpositions = new Array();
                         for(const point of allpoints){
