@@ -6,10 +6,11 @@ let allpositions = new Array();
 allpoints.forEach(point => {
     allpositions.push(point.engineAPI.getGlobalTransform().position);
 });
-GameLoop = function() { 
+function GameLoop() { 
     window.requestAnimationFrame(function() {
         voiture.setPosition(allpositions[i]);
         i++;
+        SDK3DVerse.engineAPI.propagateChanges();
         GameLoop();
     });
 }
