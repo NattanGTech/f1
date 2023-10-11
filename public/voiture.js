@@ -14,3 +14,4 @@ function GameLoop() {
         GameLoop();
     });
 }
+GameLoop();
