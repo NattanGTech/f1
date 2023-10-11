@@ -43,10 +43,10 @@
                         console.log('Voiture: ', voiture);
 
                         var trajEntities = spline[0];
-                        let allpoints = SDK3DVerse.engineAPI.getEntityChildren(trajEntities);
+                        var allpoints = SDK3DVerse.engineAPI.getEntityChildren(trajEntities);
                         console.log('debug children: ', SDK3DVerse.engineAPI.getEntityChildren(trajEntities));
 
-                        let allpositions = new Array();
+                        var allpositions = new Array();
                         allpoints.forEach(point => {
                             allpositions.push(point.getGlobalTransform());
                         });
