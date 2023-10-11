@@ -6,21 +6,22 @@ const test = async () => {
     console.log('Spline: ', spline);
     console.log('Voiture: ', voiture);
     console.log('debug children: ', SDK3DVerse.engineAPI.getEntityChildren(spline));
+
+    const trajEntities = spline[0];
+    let allpoints = SDK3DVerse.engineAPI.getEntityChildren(spline);
+
+    let allpositions = new Array();
+    allpoints.forEach(point => {
+        allpositions.push(trajEntities.getGlobalTransform());
+    });
+    function GameLoop() { 
+        window.requestAnimationFrame(function() {
+            voiture.setPosition(allpositions[i]);
+            i++;
+            SDK3DVerse.engineAPI.propagateChanges();
+            GameLoop();
+        });
+    }
+    GameLoop();
 }
 test();
-const trajEntities = spline[0];
-let allpoints = SDK3DVerse.engineAPI.getEntityChildren(spline);
-
-let allpositions = new Array();
-allpoints.forEach(point => {
-    allpositions.push(trajEntities.getGlobalTransform());
-});
-function GameLoop() { 
-    window.requestAnimationFrame(function() {
-        voiture.setPosition(allpositions[i]);
-        i++;
-        SDK3DVerse.engineAPI.propagateChanges();
-        GameLoop();
-    });
-}
-GameLoop();
