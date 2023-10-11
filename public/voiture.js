@@ -8,11 +8,11 @@ const test = async () => {
     console.log('debug children: ', SDK3DVerse.engineAPI.getEntityChildren(spline));
 
     const trajEntities = spline[0];
-    let allpoints = SDK3DVerse.engineAPI.getEntityChildren(spline);
+    let allpoints = SDK3DVerse.engineAPI.getEntityChildren(trajEntities);
 
     let allpositions = new Array();
     allpoints.forEach(point => {
-        allpositions.push(trajEntities.getGlobalTransform());
+        allpositions.push(point.getGlobalTransform());
     });
     function GameLoop() { 
         window.requestAnimationFrame(function() {
