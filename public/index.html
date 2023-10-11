@@ -39,10 +39,12 @@
 
                         var allpositions = new Array();
                         for(const point of allpoints){
-                            allpositions.push(point.getGlobalTransform());
+                            allpositions.push(point.getGlobalTransform().position);
                         }
                         console.log('Position: ', allpositions);
                         var i = 0;
+                        voiture = voiture[0]
+                        console.log('Voiture: ', voiture);
                         GameLoop(voiture, allpositions, i);
                     },
                     false
@@ -50,7 +52,7 @@
 
                 function GameLoop(voiture, allpositions, i) { 
                     window.requestAnimationFrame(function() {
-                        voiture.setGlobalTransform(allpositions[i]);
+                        voiture[0].setPosition(allpositions[i]);
                         i++;
                         SDK3DVerse.engineAPI.propagateChanges();
                         GameLoop(voiture, allpositions, i);
