@@ -24,15 +24,6 @@
                 SDK3DVerse.installExtension(SDK3DVerse_SplineDisplay_Ext);
                 SDK3DVerse.connectToEditor();
 
-                function GameLoop() { 
-                    window.requestAnimationFrame(function() {
-                        voiture.setPosition(allpositions[i]);
-                        i++;
-                        SDK3DVerse.engineAPI.propagateChanges();
-                        GameLoop();
-                    });
-                }
-
                 canvas.addEventListener(
                     'mouseup',
                     async (e) =>
@@ -55,6 +46,15 @@
                     },
                     false
                 );
+
+                function GameLoop() { 
+                    window.requestAnimationFrame(function() {
+                        voiture.setPosition(allpositions[i]);
+                        i++;
+                        SDK3DVerse.engineAPI.propagateChanges();
+                        GameLoop();
+                    });
+                }
             }); 
         </SCRIPT>
     </HEAD>
