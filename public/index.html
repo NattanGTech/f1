@@ -19,6 +19,9 @@
 
                 SDK3DVerse.setupDisplay(document.getElementById('display_canvas'));
                 SDK3DVerse.startStreamer(connectionInfo);
+
+                SDK3DVerse.installExtension(SDK3DVerse_SplineDisplay_Ext);
+                SDK3DVerse.connectToEditor();
             });
         </SCRIPT>
     </HEAD>
