@@ -12,7 +12,7 @@
             window.addEventListener('load', async () =>
             {
                 var canvas = document.getElementById('display_canvas');
-                const connectionInfo = await SDK3DVerse.webAPI.createOrJoinSession(AppConfig.sceneUUID);
+                const connectionInfo = await SDK3DVerse.webAPI.createSession(AppConfig.sceneUUID); // OrJoin
 
                 SDK3DVerse.notifier.on('onLoadingStarted', () => document.getElementById("message").innerHTML = "Connecting...");
                 SDK3DVerse.notifier.on('onLoadingProgress', (status) => document.getElementById("message").innerHTML = status.message);
@@ -30,12 +30,9 @@
                     {
                         var spline = await SDK3DVerse.engineAPI.findEntitiesByEUID("3bb55065-4c5a-4507-8ba6-1d80a9df1f0c");
                         var voiture = await SDK3DVerse.engineAPI.findEntitiesByEUID("1f9c1d9a-338d-4eaf-8adb-02d21653befb");
-                        console.log('Spline: ', spline);
-                        console.log('Voiture: ', voiture);
                         
                         var trajEntities = spline[0];
                         var allpoints = await SDK3DVerse.engineAPI.getEntityChildren(trajEntities);
-                        console.log('debug children: ', await SDK3DVerse.engineAPI.getEntityChildren(trajEntities));
 
                         var allpositions = new Array();
                         for(const point of allpoints){
@@ -44,7 +41,6 @@
                         console.log('Position: ', allpositions);
                         var i = 0;
                         voiture = voiture[0]
-                        console.log('Voiture: ', voiture);
                         GameLoop(voiture, allpositions, i);
                     },
                     false
@@ -58,7 +54,7 @@
                         GameLoop(voiture, allpositions, i);
                     });
                 }
-            }); 
+            }); //nattan est gay
         </SCRIPT>
     </HEAD>
 
