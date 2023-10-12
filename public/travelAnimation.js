@@ -335,5 +335,7 @@ export default class TravelAnimation
         return finalOrientation;
         // roller coaster
         //return outQuat;
-    }
+    }   
 }
+const travelAnimationInstance = new TravelAnimation();
+window.travelAnimationInstance = travelAnimationInstance;

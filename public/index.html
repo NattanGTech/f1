@@ -35,8 +35,9 @@
 
                         var trajEntities = spline[0];
                         
-                        const travelAnimationInstance = await new TravelAnimation();
-                        travelAnimationInstance.gotoSplineAndTravel(voiture[0], travelAnimationInstance.splines[0]);
+                        //const travelAnimationInstance = new TravelAnimation();
+                        //travelAnimationInstance.gotoSplineAndTravel(voiture[0], travelAnimationInstance.splines[0]);
+                        window.travelAnimationInstance.gotoSplineAndTravel(voiture[0], window.travelAnimationInstance.splines[0]);
 
 
                         // var allpoints = await SDK3DVerse.engineAPI.getEntityChildren(trajEntities);
