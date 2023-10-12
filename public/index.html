@@ -33,8 +33,9 @@
                         var voiture = await SDK3DVerse.engineAPI.findEntitiesByEUID("1f9c1d9a-338d-4eaf-8adb-02d21653befb");
                         
                         var trajEntities = spline[0];
+                        const travelAnimationInstance = new TravelAnimation();
                         // var allpoints = await SDK3DVerse.engineAPI.getEntityChildren(trajEntities);
-                        await SDK3DVerse.engineAPI.gotoSplineAndTravel(voiture[0], trajEntities);
+                        travelAnimationInstance.gotoSplineAndTravel(voiture[0], travelAnimationInstance.splines[0]);
 
                         /*
                         var allpositions = new Array();
