@@ -7,10 +7,9 @@
         <SCRIPT src="https://cdn.3dverse.com/legacy/sdk/latest/SDK3DVerse_ViewportDomOverlay_Ext.js"></SCRIPT>
         <SCRIPT src="https://cdn.3dverse.com/legacy/sdk/latest/SDK3DVerse_SplineDisplay_Ext.js"></SCRIPT>
         <SCRIPT src="./AppConfig.js"></SCRIPT>
-        <!-- <SCRIPT src="./travelAnimation.js"></SCRIPT> -->
+        <SCRIPT type="module" src="./travelAnimation.js"></SCRIPT>
 
         <SCRIPT>
-            import travelAnimation                from './travelAnimation.js';
             window.addEventListener('load', async () =>
             {
                 var canvas = document.getElementById('display_canvas');
@@ -31,7 +30,7 @@
                     {
                         var spline = await SDK3DVerse.engineAPI.findEntitiesByEUID("3bb55065-4c5a-4507-8ba6-1d80a9df1f0c");
                         var voiture = await SDK3DVerse.engineAPI.findEntitiesByEUID("1f9c1d9a-338d-4eaf-8adb-02d21653befb");
-                        
+
                         var trajEntities = spline[0];
                         const travelAnimationInstance = new TravelAnimation();
                         // var allpoints = await SDK3DVerse.engineAPI.getEntityChildren(trajEntities);
@@ -45,13 +44,13 @@
                         console.log('Position: ', allpositions);
                         var i = 0;
                         voiture = voiture[0]
-                        
+
                         GameLoop(voiture, allpositions, i); */
                     },
                     false
                 );
                 /*
-                function GameLoop(voiture, allpositions, i) { 
+                function GameLoop(voiture, allpositions, i) {
                     window.requestAnimationFrame(function() {
                         voiture.setPosition(allpositions[i]);
                         i++;
