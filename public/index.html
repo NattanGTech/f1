@@ -7,9 +7,6 @@
         <SCRIPT src="https://cdn.3dverse.com/legacy/sdk/latest/SDK3DVerse_ViewportDomOverlay_Ext.js"></SCRIPT>
         <SCRIPT src="https://cdn.3dverse.com/legacy/sdk/latest/SDK3DVerse_SplineDisplay_Ext.js"></SCRIPT>
         <SCRIPT src="./AppConfig.js"></SCRIPT>
-        <SCRIPT>import SDK3DVerse_Spline from './Spline'</SCRIPT>
-        // <SCRIPT>import SDK3DVerse_Spline from './Spline'</SCRIPT>
-        
         <SCRIPT type="module" src="./travelAnimation.js"></SCRIPT>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/3.4.1/gl-matrix-min.js"></script>
         
@@ -18,7 +15,7 @@
             window.addEventListener('load', async () =>
             {
                 var canvas = document.getElementById('display_canvas');
-                const connectionInfo = await SDK3DVerse.webAPI.createSession(AppConfig.sceneUUID); // OrJoin
+                const connectionInfo = await SDK3DVerse.webAPI.createOrJoinSession(AppConfig.sceneUUID);
 
                 SDK3DVerse.notifier.on('onLoadingStarted', () => document.getElementById("message").innerHTML = "Connecting...");
                 SDK3DVerse.notifier.on('onLoadingProgress', (status) => document.getElementById("message").innerHTML = status.message);
@@ -40,13 +37,16 @@
                         
                         //const travelAnimationInstance = new TravelAnimation();
                         //travelAnimationInstance.gotoSplineAndTravel(voiture[0], travelAnimationInstance.splines[0]);
-                        const splineInstance    = new SDK3DVerse_Spline(trajEntities, SDK3DVerse);
-                        await splineInstance.resolveChildren();
-                        splineInstance.updateAncestors();
-                        splineInstance.isDirty  = true;
-                        window.travelAnimationInstance.init();
-                        console.log('spline test debug ', splineInstance);
-                        window.travelAnimationInstance.gotoSplineAndTravel(voiture[0], splineInstance);
+
+                        // const splineInstance    = new SDK3DVerse_Spline(trajEntities, SDK3DVerse);
+                        // await splineInstance.resolveChildren();
+                        // splineInstance.updateAncestors();
+                        // splineInstance.isDirty  = true;
+                        
+                        await SDK3DVerse.onEditorConnected();
+                        await window.travelAnimationInstance.init();
+                        console.log('spline test debug ', travelAnimationInstance.splines[0]);
+                        window.travelAnimationInstance.gotoSplineAndTravel(voiture[0], travelAnimationInstance.splines[0]);
 
 
                         // var allpoints = await SDK3DVerse.engineAPI.getEntityChildren(trajEntities);
