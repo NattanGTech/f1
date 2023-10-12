@@ -35,7 +35,7 @@
 
                         var trajEntities = spline[0];
                         
-                        const travelAnimationInstance = new TravelAnimation();
+                        const travelAnimationInstance = await new TravelAnimation();
                         travelAnimationInstance.gotoSplineAndTravel(voiture[0], travelAnimationInstance.splines[0]);
 
 
