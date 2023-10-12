@@ -1,8 +1,6 @@
 //--------------------------------------------------------------------------------------------------
 import utils                from './utils.js';
-console.log("testfdffgsd");
 import { vec3, quat, mat4 } from 'gl-matrix';
-console.log("test");
 
 //--------------------------------------------------------------------------------------------------
 // Globals loaded from public/index.html
