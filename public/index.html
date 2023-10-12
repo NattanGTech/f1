@@ -12,6 +12,7 @@
         
 
         <SCRIPT>
+            import TravelAnimation from './TravelAnimation.js';
             window.addEventListener('load', async () =>
             {
                 var canvas = document.getElementById('display_canvas');
@@ -37,9 +38,10 @@
                         
                         //const travelAnimationInstance = new TravelAnimation();
                         //travelAnimationInstance.gotoSplineAndTravel(voiture[0], travelAnimationInstance.splines[0]);
-                        window.travelAnimationInstance.init();
-                        console.log('spline test debug ', window.travelAnimationInstance.splines);
-                        window.travelAnimationInstance.gotoSplineAndTravel(voiture[0], spline[0]);
+                        const travelAnimationInstance = new TravelAnimation();
+                        // window.travelAnimationInstance.init();
+                        // console.log('spline test debug ', window.travelAnimationInstance.splines);
+                        // window.travelAnimationInstance.gotoSplineAndTravel(voiture[0], spline[0]);
 
 
                         // var allpoints = await SDK3DVerse.engineAPI.getEntityChildren(trajEntities);
