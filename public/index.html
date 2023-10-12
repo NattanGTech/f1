@@ -23,7 +23,6 @@
                 SDK3DVerse.setupDisplay(canvas);
                 SDK3DVerse.startStreamer(connectionInfo);
 
-                SDK3DVerse.installExtension(SDK3DVerse_SplineDisplay_Ext);
                 SDK3DVerse.connectToEditor();
 
                 canvas.addEventListener(
@@ -35,7 +34,8 @@
                         
                         var trajEntities = spline[0];
                         // var allpoints = await SDK3DVerse.engineAPI.getEntityChildren(trajEntities);
-                        gotoSplineAndTravel(voiture[0], trajEntities);
+                        var travelVoiture = TravelAnimation();
+                        gotoSplineAndTravel(voiture[0], travelVoiture.splines[0]);
 
                         /*
                         var allpositions = new Array();
