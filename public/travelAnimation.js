@@ -1,6 +1,6 @@
 //--------------------------------------------------------------------------------------------------
 import utils                from './utils.js';
-import { vec3, quat, mat4 } from 'gl-matrix.js';
+import { vec3, quat, mat4 } from '/gl-matrix';
 
 //--------------------------------------------------------------------------------------------------
 // Globals loaded from public/index.html
