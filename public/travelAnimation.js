@@ -1,5 +1,6 @@
 //--------------------------------------------------------------------------------------------------
 import utils                from './utils';
+console.log("test");
 import { vec3, quat, mat4 } from 'gl-matrix';
 
 //--------------------------------------------------------------------------------------------------
@@ -8,7 +9,6 @@ const SDK3DVerse                        = window.SDK3DVerse;
 const SDK3DVerse_ThreeJS_Ext            = window.SDK3DVerse_ThreeJS_Ext;
 const SDK3DVerse_ViewportDomOverlay_Ext = window.SDK3DVerse_ViewportDomOverlay_Ext;
 const SDK3DVerse_SplineDisplay_Ext      = window.SDK3DVerse_SplineDisplay_Ext;
-console.log("test");
 
 //--------------------------------------------------------------------------------------------------
 export default class TravelAnimation
