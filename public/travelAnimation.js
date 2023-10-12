@@ -337,5 +337,5 @@ export default class TravelAnimation
         //return outQuat;
     }   
 }
-// const travelAnimationInstance = new TravelAnimation();
-// window.travelAnimationInstance = travelAnimationInstance;
+const travelAnimationInstance = new TravelAnimation();
+window.travelAnimationInstance = travelAnimationInstance;

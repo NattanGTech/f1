@@ -6,6 +6,7 @@
         <SCRIPT src="https://cdn.3dverse.com/legacy/sdk/latest/SDK3DVerse_ThreeJS_Ext.js"></SCRIPT>
         <SCRIPT src="https://cdn.3dverse.com/legacy/sdk/latest/SDK3DVerse_ViewportDomOverlay_Ext.js"></SCRIPT>
         <SCRIPT src="https://cdn.3dverse.com/legacy/sdk/latest/SDK3DVerse_SplineDisplay_Ext.js"></SCRIPT>
+        <SCRIPT src="https://cdn.3dverse.com/legacy/sdk/latest/SDK3DVerse_Spline_Ext.js"></SCRIPT>
         <SCRIPT src="./AppConfig.js"></SCRIPT>
         <SCRIPT type="module" src="./travelAnimation.js"></SCRIPT>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/3.4.1/gl-matrix-min.js"></script>
@@ -37,10 +38,13 @@
                         
                         //const travelAnimationInstance = new TravelAnimation();
                         //travelAnimationInstance.gotoSplineAndTravel(voiture[0], travelAnimationInstance.splines[0]);
-                        const travelAnimationInstance = new TravelAnimation();
-                        // window.travelAnimationInstance.init();
-                        // console.log('spline test debug ', window.travelAnimationInstance.splines);
-                        // window.travelAnimationInstance.gotoSplineAndTravel(voiture[0], spline[0]);
+                        const splineInstance    = new SDK3DVerse_Spline(trajEntities, SDK3DVerse);
+                        await splineInstance.resolveChildren();
+                        splineInstance.updateAncestors();
+                        splineInstance.isDirty  = true;
+                        window.travelAnimationInstance.init();
+                        console.log('spline test debug ', splineInstance);
+                        window.travelAnimationInstance.gotoSplineAndTravel(voiture[0], splineInstance);
 
 
                         // var allpoints = await SDK3DVerse.engineAPI.getEntityChildren(trajEntities);
